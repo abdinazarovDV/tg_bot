@@ -38,7 +38,7 @@ async function botEmit() {
         if (!result) throw new Error("Didn't delete from database")
       }
     } catch (err) {
-      console.log(err);
+      return err.message
     }
   })
 }
