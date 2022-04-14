@@ -12,7 +12,7 @@ module.exports = class Controllers {
             if (!chats) throw new Error("No groups")
 
             chats.map(el => {
-                bot.sendMessage(el.chat_id, Date())
+                bot.sendMessage(el.chat_id, message)
             })
 
             setTimeout(() => {
