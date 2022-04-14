@@ -12,16 +12,17 @@ module.exports = class Controllers {
             if (!chats) throw new Error("No groups")
 
             chats.map(el => {
-                bot.sendMessage(el.chat_id, message)
+                bot.sendMessage(el.chat_id, Date())
             })
 
-            return res
-                .status(200)
-                .json({
-                    status: 200,
-                    data: chats,
-                    message: "Message sent to all groups"
-                })
+            setTimeout(() => {
+                return res
+                    .status(200)
+                    .json({
+                        status: 200,
+                        message: "Message sent to all groups"
+                    })
+            }, 5_000);
         } catch (err) {
             return next(err);
         }
